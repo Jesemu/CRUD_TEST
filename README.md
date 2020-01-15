@@ -86,9 +86,9 @@ http://127.0.0.0.1:2806
 
 
 
-[img1]: /main.PNG
-[img2]: /logged.PNG
-[img3]: /adding_user.PNG
-[img4]: /show_user.PNG
-[img5]: /delete_user.PNG
-[img6: /deleted.PNG
+![img1]: /main.PNG
+![img2]: /logged.PNG
+![img3]: /adding_user.PNG
+![img4]: /show_user.PNG
+![img5]: /delete_user.PNG
+![img6]: /deleted.PNG
