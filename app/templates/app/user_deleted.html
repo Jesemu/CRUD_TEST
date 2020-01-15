@@ -1,0 +1,28 @@
+{%load static %}
+<html>
+<style>
+
+
+tr{
+	line-height:50px;
+}
+</style>
+{% include "app/header.html" %}
+
+	<table style="margin-top:50px;" align="center">
+		<tr>
+			<td>
+				<h2>User Deleted</h2>
+			</td>
+
+		</tr>
+	</table>
+	<table style="margin-top:50px;"align="center">
+		<tr>
+			<td align="center">
+				<a class="btn btn-outline-primary" href="{% url 'app:index' %}">Return</a>
+			</td>
+		</tr>
+	</table>
+</html>
+

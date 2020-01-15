@@ -1,0 +1,103 @@
+<html>
+<style>
+table{
+	margin-top:30px;
+}
+
+td {
+  padding-bottom: 10px;
+}
+</style>
+{% include "app/header.html" %}
+<body>
+
+	<table align="center">
+<form id="" action="" method='post'>
+	{% csrf_token %}
+		<tr>
+			<td colspan=2 align="center">
+				<a style="margin-right:150px;" class="btn btn-outline-primary" href="{% url 'app:logout' %}">Logout</a>
+				<a class="btn btn-outline-primary" href="{% url 'app:index' %}">Back</a>
+				<br /><br /><br />
+			</td>
+		</tr>
+		<tr>
+			<td align="center" colspan="3">
+				<h2>
+				{% if user_modifying == null %}
+					Adding User
+				{% else %}
+					Editing User
+				{% endif %}
+				</h2>
+				<br />
+			</td>
+		</tr>
+		<tr>
+			<td><label for="{{ form.name.id_for_label }}">Name:</label></td>
+			<td>{{ form.name }}
+
+				{% if form.name.errors %}
+					<ol style="text-align:center; font-size:15px; color:red;">
+					{% for error in form.name.errors %}
+						<li><strong>{{ error|escape }}</strong></li></p>
+					{% endfor %}
+					</ol>
+				{% endif %}
+			</td>
+		</tr>
+		
+		<tr>
+			<br />
+	    <td><label for="{{ form.surname.id_for_label }}">Surname: </label></td>
+			<td>{{ form.surname }}
+
+				{% if form.surname.errors %}
+			  	<ol style="text-align:center; font-size:15px; color:red;">
+			  	{% for error in form.surname.errors %}
+			   		<li><strong>{{ error|escape }}</strong></li></p>
+			  	{% endfor %}
+			 		 </ol>
+				{% endif %}
+			</td>
+		</tr>
+		
+		<tr>
+	    <td><label for="{{ form.iban.id_for_label }}">Iban: </label></td>
+			<td>{{ form.iban }}
+
+				{% if form.iban.errors %}
+					<ol style="text-align:center; font-size:15px; color:red;">
+				{% for error in form.iban.errors %}
+		    	<li><strong>{{ error|escape }}</strong></li></p>
+				{% endfor %}
+				</ol>
+				{% endif %}
+			</td>
+		</tr>
+		
+		<tr>
+			{% if form.non_field_errors %}
+    		<ol style="text-align:center; font-size:15px; color:red;">
+    		{% for error in form.non_field_errors %}
+       		<li><strong>{{ error|escape }}</strong></li></p>
+    		{% endfor %}
+    		</ol>
+			{% endif %}
+		</tr>
+
+	<br />
+	<tr>
+		<td align="center" colspan="2">
+			<br />
+			<br />
+			<input class="btn btn-outline-danger" type='submit' value="Submit"/>
+		</td>
+	</tr>
+<form action="/">
+	
+	</table>
+</body>
+</html>
+
+

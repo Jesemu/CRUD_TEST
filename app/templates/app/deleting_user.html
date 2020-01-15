@@ -1,0 +1,52 @@
+{%load static %}
+<html>
+<style>
+
+
+tr{
+	line-height:50px;
+}
+</style>
+{% include "app/header.html" %}
+
+	<table style="margin-top:50;" align="center">
+		<tr>
+			<td>
+					<h2>You are going to delete next user</h2>
+			</td>
+
+		</tr>
+	</table>
+	<table class="data" width=50% align="center">
+		<tr>
+			<th>
+				Name
+			</th>
+			<th>
+				Surname
+			</th>
+			<th>
+				IBAN
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<p>{{user_deleting.name}}</p>
+			</td>
+			<td>
+				<p>{{user_deleting.surname}}</p>
+			</td>
+			<td>
+				<p>{{user_deleting.iban}}</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td align="center" colspan=3>
+				<a style="margin-right:150px;" class="btn btn-outline-primary" href="{% url 'app:index' %}">Back</a>
+				<a class="btn btn-outline-danger" href="{% url 'app:user_deleted' user_deleting.id %}">Delete</a>
+			</td>
+		</tr>
+	</table>
+</html>
+

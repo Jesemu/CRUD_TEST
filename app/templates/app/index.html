@@ -1,0 +1,124 @@
+{%load static %}
+<html>
+<style>
+
+
+tr{
+	line-height:50px;
+}
+</style>
+{% include "app/header.html" %}
+
+	<table style="margin-top:50;" align="center">
+		<tr>
+			{% if user.is_authenticated %}
+			<td>
+					<h2>Welcome {{ request.user.username }} to the Administration Page</h2>
+			</td>
+
+		</tr>
+	</table>
+	<table class="data" width=50% align="center">
+		<tr>
+			<th>
+				Name
+			</th>
+			<th>
+				Surname
+			</th>
+			<th>
+				IBAN
+			</th>
+		</tr>
+		<tr>
+		{% for users in users_list %}
+		
+			<td>
+				<p>{{users.name}}</p>
+			</td>
+			<td>
+				<p>{{users.surname}}</p>
+			</td>
+			<td>
+				<p>{{users.iban}}</p>
+			</td>
+			{% if request.user == users.owner %}
+			<td>
+					<a class="btn btn-primary" href="{% url 'app:modify_user' users.id %}">Edit</a>
+			</td>
+			<td>
+					<a class="btn btn-danger" href="{% url 'app:delete_user' users.id %}">Delete</a>
+			</td>
+			{% endif %}
+		</tr>
+			{% endfor %}
+
+		<tr>
+			<td align="center" colspan=3>
+				<a style="margin-right:200px;" class="btn btn-outline-primary" href="{% url 'app:logout' %}">Logout</a>
+				<a class="btn btn-outline-primary" href="{% url 'app:add_user' %}">Add User </a>
+			</td>
+				{% else %}
+			<td align="center">
+				<h3 style="margin-top:100px;">You are not logged. Please log in to see the information</h3>
+				<br />
+				<a class="btn btn-outline-primary" href="{% url 'social:begin' 'google-oauth2' %}">Login</a>
+				{% endif %}
+			</td>
+		</tr>
+	</table>
+
+<style>
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+</style>
+
+<div class="pagination">
+
+{% if users_list.paginator.page_range|length != 1 %}
+
+{% if users_list.has_previous %}
+		<a href="?page={{ users_list.0 }}"><i class="fa fa-chevron-left" aria-hidden="true">Primera</i></a>
+    <a href="?page={{ users_list.previous_page_number }}"><i class="fa fa-chevron-left" aria-hidden="true">Anterior</i></a>
+{% else %}
+    <span><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+{% endif %}
+
+{% for i in users_list.paginator.page_range %}
+    {% if users_list.number == i %}
+				 <a class="active" href="?page={{ i }}">{{ i }}</a>
+    {% elif i > users_list.number|add:'-5' and i < users_list.number|add:'5' %}
+        <a href="?page={{ i }}">{{ i }}</a>
+    {% endif %}
+{% endfor %}
+
+
+{% if users_list.has_next %}
+    <a href="?page={{ users_list.next_page_number }}"><i class="fa fa-chevron-right" aria-hidden="true">Siguiente</i></a>
+		<a href="?page={{ users_list.paginator.num_pages  }}"><i class="fa fa-chevron-left" aria-hidden="true">Final</i></a>
+{% else %}
+    <span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+{% endif %}
+
+{% endif %}
+
+</div>
+
+
+</html>
+
