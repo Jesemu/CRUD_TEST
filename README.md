@@ -85,10 +85,15 @@ http://localhost:2806
 http://127.0.0.0.1:2806
 
 
-
+# Index
 ![img1](/main.PNG)
+# One logged
 ![img2](/logged.PNG)
+# Adding User
 ![img3](/adding_user.PNG)
+# Showing Users
 ![img4](/show_user.PNG)
+# Deleting Users
 ![img5](/delete_user.PNG)
+# After delete
 ![img6](/deleted.PNG)
