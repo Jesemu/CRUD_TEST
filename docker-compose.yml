@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:12
+    environment:
+      - POSTGRES_DB=mydb
+  web:
+    build: ./work
+    command: python manage.py runserver 0.0.0.0:2806
+    volumes:
+      - ./work:/work
+    ports:
+      - "2806:2806"
+    depends_on:
+      - db
