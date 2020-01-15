@@ -15,7 +15,7 @@ To log in with Google I have used django-social-auth.
 $ pip install social-auth-app-django
 ~~~~ 
 After that we have to add the app __'social_django'__ to our installed apps.
-And add the followings lines:
+And add the following lines:
 
 ~~~
 
