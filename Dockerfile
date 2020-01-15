@@ -5,7 +5,7 @@ ENV WORK_DIR=/work
 
 RUN mkdir $WORK_DIR
 
-WORKDIR $WEAPP_DIR
+WORKDIR $WORK_DIR
 
 ADD requirements.txt $WORK_DIR/
 
