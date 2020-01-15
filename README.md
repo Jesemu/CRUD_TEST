@@ -80,6 +80,6 @@ sudo docker-compose up -d
 sudo docker-compose exec web python manage.py makemgirations
 sudo docker-compose exec web python manage.py migrate
 ~~~~ 
-5. Open browser and check:
-http://localhost:2806
+5. Open browser and check:  
+http://localhost:2806  
 http://127.0.0.0.1:2806
