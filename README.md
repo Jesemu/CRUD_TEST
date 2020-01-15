@@ -1,6 +1,6 @@
 ## CRUD_TEST
 ### by Jesús Serrano Muñoz
-This project I'm going to implement a small Django application to manage (CRUD) users and their bank account data (IBAN). 
+In this project I'm going to implement a small Django application to manage (CRUD) users and their bank account data (IBAN). 
 Required fields are first name, last name and IBAN. Data should be validated.
 
 1. Administrators of the app should authenticate using a Google account
@@ -15,7 +15,7 @@ To log in with Google I have used django-social-auth.
 $ pip install social-auth-app-django
 ~~~~ 
 After that we have to add the app __'social_django'__ to our installed apps.
-And add the followins lanes:
+And add the followings lines:
 
 ~~~
 
