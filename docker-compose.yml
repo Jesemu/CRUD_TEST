@@ -6,7 +6,7 @@ services:
     environment:
       - POSTGRES_DB=mydb
   web:
-    build: ./work
+    build: .
     command: python manage.py runserver 0.0.0.0:2806
     volumes:
       - ./work:/work
