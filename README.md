@@ -87,7 +87,7 @@ http://127.0.0.0.1:2806
 
 # Index
 ![img1](/main.PNG)
-# One logged
+# Once loged
 ![img2](/logged.PNG)
 # Adding User
 ![img3](/adding_user.PNG)
