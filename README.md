@@ -36,7 +36,7 @@ LOGOUT_REDIRECT_URL = '/'
 ~~~
 
 To get your ID and Secret Key, you have to go to: Google Api https://console.developers.google.com/
-On credenteials and create a new OAuth 2.0.
+On credentials and create a new OAuth 2.0.
 
 In redirects URLs you have to put: http://localhost:"your_port"/auth/complete/google-oauth2/
 
