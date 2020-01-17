@@ -35,7 +35,7 @@ td {
 		</tr>
 		<tr>
 			<td><label for="{{ form.name.id_for_label }}">Name:</label></td>
-			<td>{{ form.name }}
+			<td><input name="{{ form.name.name }}" value="{{user_modifying.name}}">
 
 				{% if form.name.errors %}
 					<ol style="text-align:center; font-size:15px; color:red;">
@@ -49,8 +49,8 @@ td {
 		
 		<tr>
 			<br />
-	    <td><label for="{{ form.surname.id_for_label }}">Surname: </label></td>
-			<td>{{ form.surname }}
+	    <td><label value={{user_modifying.surname}} for="{{ form.surname.id_for_label }}">Surname: </label></td>
+			<td><input name="{{ form.surname.name }}" value="{{user_modifying.surname}}">
 
 				{% if form.surname.errors %}
 			  	<ol style="text-align:center; font-size:15px; color:red;">
@@ -63,8 +63,8 @@ td {
 		</tr>
 		
 		<tr>
-	    <td><label for="{{ form.iban.id_for_label }}">Iban: </label></td>
-			<td>{{ form.iban }}
+	    <td><label value="{{user_modifying.iban}} "for="{{ form.iban.id_for_label }}">Iban: </label></td>
+			<td><input name="{{ form.iban.name }}" value="{{user_modifying.iban}}">
 
 				{% if form.iban.errors %}
 					<ol style="text-align:center; font-size:15px; color:red;">
